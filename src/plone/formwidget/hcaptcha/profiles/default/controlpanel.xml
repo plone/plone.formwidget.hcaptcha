@@ -2,15 +2,15 @@
 <object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
         name="portal_controlpanel"
         purge="False"
-        i18n:domain="plone.formwidget.recaptcha"
+        i18n:domain="plone.formwidget.hcaptcha"
 >
 
-  <configlet action_id="recaptcha"
-             appId="plone.formwidget.recaptcha"
+  <configlet action_id="hcaptcha"
+             appId="plone.formwidget.hcaptcha"
              category="Products"
              condition_expr=""
-             title="ReCaptcha"
-             url_expr="string:${portal_url}/@@recaptcha-settings"
+             title="HCaptcha"
+             url_expr="string:${portal_url}/@@hcaptcha-settings"
              visible="True"
              i18n:attributes="title"
   >

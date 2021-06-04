@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <object name="portal_controlpanel">
-  <configlet action_id="recaptcha"
-             appId="plone.formwidget.recaptcha"
+  <configlet action_id="hcaptcha"
+             appId="plone.formwidget.hcaptcha"
              category="Products"
              remove="True"
-             title="ReCaptcha"
+             title="HCaptcha"
   />
 </object>

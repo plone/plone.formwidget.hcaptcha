@@ -1,5 +1,5 @@
 <layers>
-  <layer interface="plone.formwidget.recaptcha.interfaces.IHCaptchaLayer"
-         name="plone.formwidget.recaptcha"
+  <layer interface="plone.formwidget.hcaptcha.interfaces.IHCaptchaLayer"
+         name="plone.formwidget.hcaptcha"
   />
 </layers>
