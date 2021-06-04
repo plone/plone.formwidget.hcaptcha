@@ -1,17 +1,17 @@
 Introduction
 ============
 
-plone.formwidget.recaptcha is a ``z3c.form`` ReCaptcha widget for use with Plone.
+plone.formwidget.hcaptcha is a ``z3c.form`` HCaptcha widget for use with Plone.
 
-It is a z3c.form re-implementation of the `collective.recaptcha`_ package original written by David Glick.
+It is a re-work of the 'plone.formwidget.recaptcha'_ package original written by Timo Stollenwerk.
 
-.. _collective.recaptcha: http://plone.org/products/collective.recaptcha
+.. _plone.forwwidget.recaptcha: http://github.com/plone/plone.formwidget.recaptcha
 
 
 Buildout Installation
 ---------------------
 
-Add the following code to your buildout.cfg to install plone.formwidget.recaptcha::
+Add the following code to your buildout.cfg to install plone.formwidget.hcaptcha::
 
     [buildout]
     ...
@@ -20,48 +20,42 @@ Add the following code to your buildout.cfg to install plone.formwidget.recaptch
     ...
     eggs =
         ...
-        plone.formwidget.recaptcha
+        plone.formwidget.hcaptcha
         ...
 
 
 ReCaptcha setup
 ---------------
 
-There is a control panel at ``http://path/to/site/@@recaptcha-settings`` to configure the Addon.
-Google provides a set of test keys, that can be used to try out the recaptcha form
-and documentation at https://developers.google.com/recaptcha/docs/faq.
+There is a control panel at ``http://path/to/site/@@hcaptcha-settings`` to configure the Addon.
+HCaptcha provides test keys, that can be used to try out the hcaptcha form and
+documentation at https://docs.hcaptcha.com/.
 
-``Site key: 6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI``
+``Site key: 10000000-ffff-ffff-ffff-000000000001``
 
-``Secret key: 6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe``
+``Secret key: 0x0000000000000000000000000000000000000000``
 
 To actually use the service, you must obtain a site key and secret key from
-`developers.google.com/recaptcha <https://developers.google.com/recaptcha/>`_
+`https://www.hcaptcha.com/signup-interstitial <https://www.hcaptcha.com/signup-interstitial/>`_
 
 Usage
 -----
-See the `demo <https://github.com/plone/plone.formwidget.recaptcha/tree/master/src/plone/formwidget/recaptcha/demo>`_ folder inside the distribution for an example usage.
+See the `demo <https://github.com/plone/plone.formwidget.hcaptcha/tree/master/src/plone/formwidget/hcaptcha/demo>`_ folder inside the distribution for an example usage.
 
 Supermodel
 ^^^^^^^^^^
 You can add a captcha field in an XML model by adding something like this::
 
-    <field name="captcha" type="plone.formwidget.recaptcha.ReCaptchaWidget">
+    <field name="captcha" type="plone.formwidget.hcaptcha.HCaptchaWidget">
       <title>Solve Captcha</title>
       <description></description>
     </field>
 
 
-Upgrade to API v2
------------------
-
-plone.formwidget.recaptcha 2.* uses V2 of the reCaptcha API.
-Users upgrading from plone.formwidget.recaptcha 1.* will therefore need to generate new keys
-as global Keys are not supported in the V2 API.
 
 Source Code
 -----------
 
 Contributors please read the document `Process for Plone core's development <http://docs.plone.org/develop/plone-coredev/index.html>`_
 
-Sources are at the `Plone code repository hosted at Github <https://github.com/plone/plone.formwidget.recaptcha>`_.
+Sources are at the `Plone code repository hosted at Github <https://github.com/plone/plone.formwidget.hcaptcha>`_.
