@@ -1,1 +1,1 @@
-<tal:block tal:replace="structure context/@@recaptcha/image_tag" />
+<tal:block tal:replace="structure context/@@hcaptcha/image_tag" />

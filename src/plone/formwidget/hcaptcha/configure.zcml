@@ -14,12 +14,12 @@
 
 
   <utility
-      name="plone.formwidget.recaptcha.HCaptchaWidget"
+      name="plone.formwidget.hcaptcha.HCaptchaWidget"
       component=".supermodel.CaptchaHandler"
       />
 
   <adapter
-      for="plone.formwidget.recaptcha.supermodel.ICaptchaField
+      for="plone.formwidget.hcaptcha.supermodel.ICaptchaField
            z3c.form.interfaces.IFormLayer"
       factory=".widget.HCaptchaFieldWidget"
       />
@@ -35,8 +35,8 @@
       />
   <gs:registerProfile
       name="uninstall"
-      title="plone.formwidgets.recaptcha (uninstall)"
-      description="Uninstalls the plone.formwidgets.recaptcha add-on."
+      title="plone.formwidgets.hcaptcha (uninstall)"
+      description="Uninstalls the plone.formwidgets.hcaptcha add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       directory="profiles/uninstall"
       />
@@ -45,7 +45,7 @@
       description=""
       destination="2"
       handler=".upgrades.install_browserlayer"
-      profile="plone.formwidget.recaptcha:default"
+      profile="plone.formwidget.hcaptcha:default"
       source="1"
       />
   <gs:upgradeStep
@@ -53,7 +53,7 @@
       description=""
       destination="3"
       handler=".upgrades.reapply_registry"
-      profile="plone.formwidget.recaptcha:default"
+      profile="plone.formwidget.hcaptcha:default"
       source="2"
       />
   <gs:upgradeStep
@@ -61,16 +61,16 @@
       description=""
       destination="4"
       handler=".upgrades.to_4"
-      profile="plone.formwidget.recaptcha:default"
+      profile="plone.formwidget.hcaptcha:default"
       source="3"
       />
 
   <!-- Control panel -->
   <browser:page
-      name="recaptcha-settings"
+      name="hcaptcha-settings"
       for="zope.component.interfaces.ISite"
       permission="cmf.ManagePortal"
-      class=".controlpanel.ReCaptchaSettingsControlPanel"
+      class=".controlpanel.HCaptchaSettingsControlPanel"
       layer=".interfaces.IHCaptchaLayer"
       />
 
@@ -78,7 +78,7 @@
   <adapter factory=".view.HcaptchaInfo" />
 
   <browser:view
-      name="recaptcha"
+      name="hcaptcha"
       for="*"
       permission="zope2.Public"
       class=".view.HcaptchaView"
@@ -86,17 +86,17 @@
       />
 
   <!-- make security assertions for use from restricted Python -->
-  <class class="plone.formwidget.recaptcha.view.HcaptchaView">
+  <class class="plone.formwidget.hcaptcha.view.HcaptchaView">
     <allow
         attributes="image_tag audio_url verify external"
         />
   </class>
 
-  <!-- ReCaptcha widget -->
+  <!-- HCaptcha widget -->
   <class class=".widget.HCaptchaWidget">
     <require
         permission="zope.Public"
-        interface="plone.formwidget.recaptcha.interfaces.IHCaptchaWidget"
+        interface="plone.formwidget.hcaptcha.interfaces.IHCaptchaWidget"
         />
   </class>
 
@@ -104,14 +104,14 @@
       template="widget_display.pt"
       layer="z3c.form.interfaces.IFormLayer"
       mode="display"
-      widget="plone.formwidget.recaptcha.interfaces.IHCaptchaWidget"
+      widget="plone.formwidget.hcaptcha.interfaces.IHCaptchaWidget"
       />
 
   <z3c:widgetTemplate
       template="widget.pt"
       layer="z3c.form.interfaces.IFormLayer"
       mode="input"
-      widget="plone.formwidget.recaptcha.interfaces.IHCaptchaWidget"
+      widget="plone.formwidget.hcaptcha.interfaces.IHCaptchaWidget"
       />
 
 </configure>

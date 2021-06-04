@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from Acquisition import aq_inner
-from plone.formwidget.recaptcha.interfaces import IHCaptchaWidget
+from plone.formwidget.hcaptcha.interfaces import IHCaptchaWidget
 from z3c.form import interfaces
 from z3c.form import widget
 from z3c.form.browser import text

@@ -6,7 +6,7 @@ from zope.i18nmessageid import MessageFactory
 from zope.schema import ValidationError
 
 
-_ = MessageFactory("plone.formwidget.recaptcha")
+_ = MessageFactory("plone.formwidget.hcaptcha")
 
 
 class WrongCaptchaCode(ValidationError):

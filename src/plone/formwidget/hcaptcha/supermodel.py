@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from Acquisition import aq_inner
-from plone.formwidget.recaptcha.validator import WrongCaptchaCode
+from plone.formwidget.hcaptcha.validator import WrongCaptchaCode
 from plone.supermodel.exportimport import ObjectHandler
 from zope.component import getMultiAdapter
 from zope.interface import implementer
@@ -24,7 +24,7 @@ class CaptchaField(Field):
 
     def validate(self, value):
         captcha = getMultiAdapter(
-            (aq_inner(self.context), self.context.REQUEST), name="recaptcha"
+            (aq_inner(self.context), self.context.REQUEST), name="hcaptcha"
         )
         if not captcha.verify():
             raise WrongCaptchaCode

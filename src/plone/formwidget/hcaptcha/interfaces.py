@@ -7,7 +7,7 @@ from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
 
 
-_ = MessageFactory("plone.formwidget.recaptcha")
+_ = MessageFactory("plone.formwidget.hcaptcha")
 
 display_themes = SimpleVocabulary(
     [
@@ -30,11 +30,11 @@ display_sizes = SimpleVocabulary(
 
 
 class IHCaptchaLayer(Interface):
-    """Browser layer for plone.formwdiget.recaptcha"""
+    """Browser layer for plone.formwdiget.hcaptcha"""
 
 
 class IHCaptchaWidget(interfaces.IWidget):
-    """Marker interface for the ReCaptcha widget
+    """Marker interface for the HCaptcha widget
     """
 
 

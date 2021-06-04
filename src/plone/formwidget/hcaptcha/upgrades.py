@@ -7,7 +7,7 @@ from zope.component import getUtility
 def install_browserlayer(context):
     setup = getToolByName(context, "portal_setup")
     setup.runImportStepFromProfile(
-        "profile-plone.formwidget.recaptcha:default",
+        "profile-plone.formwidget.hcaptcha:default",
         "browserlayer",
         run_dependencies=False,
         purge_old=False,
@@ -17,7 +17,7 @@ def install_browserlayer(context):
 def reapply_registry(context):
     setup = getToolByName(context, "portal_setup")
     setup.runImportStepFromProfile(
-        "profile-plone.formwidget.recaptcha:default",
+        "profile-plone.formwidget.hcaptcha:default",
         "plone.app.registry",
         run_dependencies=False,
         purge_old=False,
@@ -29,7 +29,7 @@ def to_4(context):
     jstool = getToolByName(context, "portal_javascripts", None)
     if jstool:
         jstool.manage_removeScript(
-            "++resource++plone.formwidget.recaptcha/recaptcha_ajax.js"
+            "++resource++plone.formwidget.hcaptcha/hcaptcha_ajax.js"
         )
 
     registry = getUtility(IRegistry)
@@ -37,7 +37,7 @@ def to_4(context):
     if record in registry.records:
         # Plone 5
         resources = registry.records[record]
-        res = "resource-plone-formwidget-recaptcha-recaptcha_ajax"
+        res = "resource-plone-formwidget-hcaptcha-hcaptcha_ajax"
         if res in resources.value:
             resources.value.remove(res)
 

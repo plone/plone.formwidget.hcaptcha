@@ -4,10 +4,10 @@ from plone.app.testing import IntegrationTesting
 from plone.app.testing import PLONE_FIXTURE
 from plone.app.testing import PloneSandboxLayer
 
-import plone.formwidget.recaptcha
+import plone.formwidget.hcaptcha
 
 
-class PloneFormwidgetRecaptchaLayer(PloneSandboxLayer):
+class PloneFormwidgetHcaptchaLayer(PloneSandboxLayer):
 
     defaultBases = (PLONE_FIXTURE,)
 
@@ -15,16 +15,16 @@ class PloneFormwidgetRecaptchaLayer(PloneSandboxLayer):
         # Load any other ZCML that is required for your tests.
         # The z3c.autoinclude feature is disabled in the Plone fixture base
         # layer.
-        self.loadZCML(package=plone.formwidget.recaptcha)
+        self.loadZCML(package=plone.formwidget.hcaptcha)
 
     def setUpPloneSite(self, portal):
-        applyProfile(portal, "plone.formwidget.recaptcha:default")
+        applyProfile(portal, "plone.formwidget.hcaptcha:default")
 
 
-PLONE_FORMWIDGET_RECAPTCHA_FIXTURE = PloneFormwidgetRecaptchaLayer()
+PLONE_FORMWIDGET_HCAPTCHA_FIXTURE = PloneFormwidgetHcaptchaLayer()
 
 
-PLONE_FORMWIDGET_RECAPTCHA_INTEGRATION_TESTING = IntegrationTesting(
-    bases=(PLONE_FORMWIDGET_RECAPTCHA_FIXTURE,),
-    name="PloneFormwidgetRecaptchaLayer:IntegrationTesting",
+PLONE_FORMWIDGET_HCAPTCHA_INTEGRATION_TESTING = IntegrationTesting(
+    bases=(PLONE_FORMWIDGET_HCAPTCHA_FIXTURE,),
+    name="PloneFormwidgetHcaptchaLayer:IntegrationTesting",
 )

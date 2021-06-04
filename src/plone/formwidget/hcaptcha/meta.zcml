@@ -1,6 +1,6 @@
 <configure xmlns:meta="http://namespaces.zope.org/meta">
 
-  <!-- Declare that plone.formwidget.recaptcha provides a Captcha field that
+  <!-- Declare that plone.formwidget.hcaptcha provides a Captcha field that
          can be used by plone.app.discussion to add a Captcha field to comment
          forms. -->
   <meta:provides feature="plone.app.discussion-captcha" />

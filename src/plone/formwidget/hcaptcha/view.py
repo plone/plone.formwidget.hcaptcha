@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from plone.formwidget.recaptcha.interfaces import IHCaptchaSettings
-from plone.formwidget.recaptcha.nohcaptcha import displayhtml
-from plone.formwidget.recaptcha.nohcaptcha import submit
+from plone.formwidget.hcaptcha.interfaces import IHCaptchaSettings
+from plone.formwidget.hcaptcha.nohcaptcha import displayhtml
+from plone.formwidget.hcaptcha.nohcaptcha import submit
 from plone.registry.interfaces import IRegistry
 from Products.Five import BrowserView
 from zope import schema
@@ -40,7 +40,7 @@ class HcaptchaView(BrowserView):
     def image_tag(self):
         if not self.settings.public_key:
             return """No hcaptcha public key configured.
-                Go to <a href="{}/@@recaptcha-settings" target=_blank>
+                Go to <a href="{}/@@hcaptcha-settings" target=_blank>
                 Hcaptcha Settings</a> to configure.""".format(
                 getSite().absolute_url()
             )  # noqa: E501
@@ -64,7 +64,7 @@ class HcaptchaView(BrowserView):
         if not self.settings.private_key:
             raise ValueError(
                 "No hcaptcha private key configured. Go to "
-                "path/to/site/@@recaptcha-settings to configure."
+                "path/to/site/@@hcaptcha-settings to configure."
             )
         response_field = self.request.get("h-captcha-response")
         remote_addr = self.request.get("HTTP_X_FORWARDED_FOR", "").split(",")[0]
