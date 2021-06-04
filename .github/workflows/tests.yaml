@@ -7,12 +7,10 @@ jobs:
     strategy:
       matrix:
         python-version:
-        - "2.7"
         - "3.6"
         - "3.7"
         - "3.8"    
         plone-version:
-        - "4.3"
         - "5.2"
         exclude:
         - python-version: "3.6"
