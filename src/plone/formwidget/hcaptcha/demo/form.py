@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from Acquisition import aq_inner
-from plone.formwidget.recaptcha.widget import ReCaptchaFieldWidget
+from plone.formwidget.recaptcha.widget import HCaptchaFieldWidget
 from plone.z3cform.layout import wrap_form
 from z3c.form import button
 from z3c.form import field
@@ -15,13 +15,13 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class IReCaptchaForm(interface.Interface):
+class IHCaptchaForm(interface.Interface):
     subject = schema.TextLine(title=u"Subject", description=u"", required=True)
 
-    captcha = schema.TextLine(title=u"ReCaptcha", description=u"", required=False)
+    captcha = schema.TextLine(title=u"HCaptcha", description=u"", required=False)
 
 
-class ReCaptcha(object):
+class HCaptcha(object):
     subject = u""
     captcha = u""
 
@@ -32,20 +32,20 @@ class ReCaptcha(object):
 class BaseForm(form.Form):
     """ example captcha form """
 
-    fields = field.Fields(IReCaptchaForm)
-    fields["captcha"].widgetFactory = ReCaptchaFieldWidget
+    fields = field.Fields(IHCaptchaForm)
+    fields["captcha"].widgetFactory = HCaptchaFieldWidget
 
     @button.buttonAndHandler(u"Save")
     def handleApply(self, action):
         data, errors = self.extractData()
         captcha = getMultiAdapter(
-            (aq_inner(self.context), self.request), name="recaptcha"
+            (aq_inner(self.context), self.request), name="hcaptcha"
         )
         if captcha.verify():
-            logger.info("ReCaptcha validation passed.")
+            logger.info("HCaptcha validation passed.")
         else:
             logger.info("The code you entered was wrong, please enter the new one.")
         return
 
 
-ReCaptchaForm = wrap_form(BaseForm)
+HCaptchaForm = wrap_form(BaseForm)

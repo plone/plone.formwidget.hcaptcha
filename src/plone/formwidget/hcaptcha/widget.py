@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from Acquisition import aq_inner
-from plone.formwidget.recaptcha.interfaces import IReCaptchaWidget
+from plone.formwidget.recaptcha.interfaces import IHCaptchaWidget
 from z3c.form import interfaces
 from z3c.form import widget
 from z3c.form.browser import text
@@ -12,8 +12,8 @@ import zope.interface
 import zope.schema.interfaces
 
 
-@implementer_only(IReCaptchaWidget)
-class ReCaptchaWidget(text.TextWidget):
+@implementer_only(IHCaptchaWidget)
+class HCaptchaWidget(text.TextWidget):
     maxlength = 7
     size = 8
 
@@ -32,6 +32,6 @@ class ReCaptchaWidget(text.TextWidget):
 
 @zope.component.adapter(zope.schema.interfaces.IField, interfaces.IFormLayer)
 @zope.interface.implementer(interfaces.IFieldWidget)
-def ReCaptchaFieldWidget(field, request):
+def HCaptchaFieldWidget(field, request):
     """IFieldWidget factory for CaptchaWidget."""
-    return widget.FieldWidget(field, ReCaptchaWidget(request))
+    return widget.FieldWidget(field, HCaptchaWidget(request))

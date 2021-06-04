@@ -29,16 +29,16 @@ display_sizes = SimpleVocabulary(
 )
 
 
-class IReCaptchaLayer(Interface):
+class IHCaptchaLayer(Interface):
     """Browser layer for plone.formwdiget.recaptcha"""
 
 
-class IReCaptchaWidget(interfaces.IWidget):
+class IHCaptchaWidget(interfaces.IWidget):
     """Marker interface for the ReCaptcha widget
     """
 
 
-class IReCaptchaSettings(Interface):
+class IHCaptchaSettings(Interface):
     """Global discussion settings.
 
     This describes records stored in the configuration registry and

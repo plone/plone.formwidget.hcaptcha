@@ -14,21 +14,21 @@
 
 
   <utility
-      name="plone.formwidget.recaptcha.ReCaptchaWidget"
+      name="plone.formwidget.recaptcha.HCaptchaWidget"
       component=".supermodel.CaptchaHandler"
       />
 
   <adapter
       for="plone.formwidget.recaptcha.supermodel.ICaptchaField
            z3c.form.interfaces.IFormLayer"
-      factory=".widget.ReCaptchaFieldWidget"
+      factory=".widget.HCaptchaFieldWidget"
       />
 
   <!-- Profile and upgrades -->
   <gs:registerProfile
       name="default"
-      title="ReCaptcha widget"
-      description="z3c.form ReCaptcha widget."
+      title="HCaptcha widget"
+      description="z3c.form HCaptcha widget."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       directory="profiles/default"
@@ -71,32 +71,32 @@
       for="zope.component.interfaces.ISite"
       permission="cmf.ManagePortal"
       class=".controlpanel.ReCaptchaSettingsControlPanel"
-      layer=".interfaces.IReCaptchaLayer"
+      layer=".interfaces.IHCaptchaLayer"
       />
 
 
-  <adapter factory=".view.RecaptchaInfo" />
+  <adapter factory=".view.HcaptchaInfo" />
 
   <browser:view
       name="recaptcha"
       for="*"
       permission="zope2.Public"
-      class=".view.RecaptchaView"
-      layer=".interfaces.IReCaptchaLayer"
+      class=".view.HcaptchaView"
+      layer=".interfaces.IHCaptchaLayer"
       />
 
   <!-- make security assertions for use from restricted Python -->
-  <class class="plone.formwidget.recaptcha.view.RecaptchaView">
+  <class class="plone.formwidget.recaptcha.view.HcaptchaView">
     <allow
         attributes="image_tag audio_url verify external"
         />
   </class>
 
   <!-- ReCaptcha widget -->
-  <class class=".widget.ReCaptchaWidget">
+  <class class=".widget.HCaptchaWidget">
     <require
         permission="zope.Public"
-        interface="plone.formwidget.recaptcha.interfaces.IReCaptchaWidget"
+        interface="plone.formwidget.recaptcha.interfaces.IHCaptchaWidget"
         />
   </class>
 
@@ -104,14 +104,14 @@
       template="widget_display.pt"
       layer="z3c.form.interfaces.IFormLayer"
       mode="display"
-      widget="plone.formwidget.recaptcha.interfaces.IReCaptchaWidget"
+      widget="plone.formwidget.recaptcha.interfaces.IHCaptchaWidget"
       />
 
   <z3c:widgetTemplate
       template="widget.pt"
       layer="z3c.form.interfaces.IFormLayer"
       mode="input"
-      widget="plone.formwidget.recaptcha.interfaces.IReCaptchaWidget"
+      widget="plone.formwidget.recaptcha.interfaces.IHCaptchaWidget"
       />
 
 </configure>

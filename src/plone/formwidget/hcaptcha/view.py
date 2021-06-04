@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from plone.formwidget.recaptcha.interfaces import IReCaptchaSettings
-from plone.formwidget.recaptcha.norecaptcha import displayhtml
-from plone.formwidget.recaptcha.norecaptcha import submit
+from plone.formwidget.recaptcha.interfaces import IHCaptchaSettings
+from plone.formwidget.recaptcha.nohcaptcha import displayhtml
+from plone.formwidget.recaptcha.nohcaptcha import submit
 from plone.registry.interfaces import IRegistry
 from Products.Five import BrowserView
 from zope import schema
@@ -14,34 +14,34 @@ from zope.interface import Interface
 from zope.publisher.interfaces.browser import IBrowserRequest
 
 
-class IRecaptchaInfo(Interface):
+class IHcaptchaInfo(Interface):
     error = schema.TextLine()
     verified = schema.Bool()
 
 
 @adapter(IBrowserRequest)
-@implementer(IRecaptchaInfo)
-class RecaptchaInfoAnnotation(object):
+@implementer(IHcaptchaInfo)
+class HcaptchaInfoAnnotation(object):
     def __init__(self):
         self.error = None
         self.verified = False
 
 
-RecaptchaInfo = factory(RecaptchaInfoAnnotation)
+HcaptchaInfo = factory(HcaptchaInfoAnnotation)
 
 
-class RecaptchaView(BrowserView):
+class HcaptchaView(BrowserView):
     def __init__(self, context, request):
         self.context = context
         self.request = request
         registry = queryUtility(IRegistry)
-        self.settings = registry.forInterface(IReCaptchaSettings)
+        self.settings = registry.forInterface(IHCaptchaSettings)
 
     def image_tag(self):
         if not self.settings.public_key:
-            return """No recaptcha public key configured.
+            return """No hcaptcha public key configured.
                 Go to <a href="{}/@@recaptcha-settings" target=_blank>
-                Recaptcha Settings</a> to configure.""".format(
+                Hcaptcha Settings</a> to configure.""".format(
                 getSite().absolute_url()
             )  # noqa: E501
         lang = self.request.get("LANGUAGE", "en")
@@ -57,16 +57,16 @@ class RecaptchaView(BrowserView):
         return None
 
     def verify(self, input=None):
-        info = IRecaptchaInfo(self.request)
+        info = IHcaptchaInfo(self.request)
         if info.verified:
             return True
 
         if not self.settings.private_key:
             raise ValueError(
-                "No recaptcha private key configured. Go to "
+                "No hcaptcha private key configured. Go to "
                 "path/to/site/@@recaptcha-settings to configure."
             )
-        response_field = self.request.get("g-recaptcha-response")
+        response_field = self.request.get("h-captcha-response")
         remote_addr = self.request.get("HTTP_X_FORWARDED_FOR", "").split(",")[0]
         if not remote_addr:
             remote_addr = self.request.get("REMOTE_ADDR")

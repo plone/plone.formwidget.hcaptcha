@@ -13,11 +13,11 @@ class WrongCaptchaCode(ValidationError):
     __doc__ = _(u"The code you entered was wrong, please enter the new one.")
 
 
-class ReCaptchaValidator(validator.SimpleFieldValidator):
+class HCaptchaValidator(validator.SimpleFieldValidator):
     def validate(self, value):
-        super(ReCaptchaValidator, self).validate(value)
+        super(HCaptchaValidator, self).validate(value)
         captcha = getMultiAdapter(
-            (aq_inner(self.context), self.request), name="recaptcha"
+            (aq_inner(self.context), self.request), name="hcaptcha"
         )
         if not captcha.verify():
             raise WrongCaptchaCode

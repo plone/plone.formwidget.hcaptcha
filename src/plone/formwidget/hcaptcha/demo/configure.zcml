@@ -4,16 +4,16 @@
     >
 
   <browser:page
-      name="recaptcha_form"
+      name="hcaptcha_form"
       for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
       permission="zope.Public"
-      class=".form.ReCaptchaForm"
+      class=".form.HCaptchaForm"
       />
 
   <adapter
-      provides=".form.IReCaptchaForm"
+      provides=".form.IHCaptchaForm"
       for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
-      factory=".form.ReCaptcha"
+      factory=".form.HCaptcha"
       />
 
 </configure>
