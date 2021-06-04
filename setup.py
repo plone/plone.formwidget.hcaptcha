@@ -3,18 +3,18 @@ from setuptools import find_packages
 from setuptools import setup
 
 
-version = "2.3.1.dev0"
+version = "1.0a1"
 
 description = open("README.rst").read() + "\n"
 description += open("CHANGES.rst").read()
 
 setup(
-    name="plone.formwidget.recaptcha",
+    name="plone.formwidget.hcaptcha",
     version=version,
-    description="ReCaptcha widget for Plone.",
+    description="Hcaptcha widget for Plone.",
     long_description=description,
     classifiers=[
-        "Development Status :: 5 - Production/Stable",
+        "Development Status :: 3 - Alpha",
         "Environment :: Web Environment",
         "Framework :: Plone",
         "Framework :: Plone :: Addon",
@@ -30,10 +30,10 @@ setup(
         "Programming Language :: Python :: 3.8",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
-    keywords="plone discussion plone.app.discussion spam captcha recaptcha",
+    keywords="plone discussion plone.app.discussion spam captcha hcaptcha",
     author="Timo Stollenwerk - Plone Foundation",
     author_email="plone-developers@lists.sourceforge.net",
-    url="https://github.com/plone/plone.formwidget.recaptcha",
+    url="https://github.com/plone/plone.formwidget.hcaptcha",
     license="GPLv2",
     packages=find_packages("src"),
     package_dir={"": "src"},
