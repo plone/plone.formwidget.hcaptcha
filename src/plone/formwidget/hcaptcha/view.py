@@ -39,7 +39,7 @@ class HcaptchaView(BrowserView):
 
     def image_tag(self):
         if not self.settings.public_key:
-            return """No hcaptcha public key configured.
+            return """No hcaptcha public key / site key configured.
                 Go to <a href="{}/@@hcaptcha-settings" target=_blank>
                 Hcaptcha Settings</a> to configure.""".format(
                 getSite().absolute_url()

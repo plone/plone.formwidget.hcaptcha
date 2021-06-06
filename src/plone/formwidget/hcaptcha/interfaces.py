@@ -52,7 +52,7 @@ class IHCaptchaSettings(Interface):
     # - Search control panel: Show comments in search results
 
     public_key = schema.TextLine(
-        title=_(u"Public Key"), description=_(u""), required=True, default=u""
+        title=_(u"Public Key / Site Key"), description=_(u""), required=True, default=u""
     )
 
     private_key = schema.TextLine(

@@ -11,7 +11,7 @@ class HCaptchaSettingsEditForm(controlpanel.RegistryEditForm):
     description = _(
         u"In order to use HCaptcha on your Plone site, go to "
         u"https://www.hcaptcha.com/ to create an account and "
-        u"to receive your private and public key. Then configure them at "
+        u"to receive your private and public key / site key. Then configure them at "
         u"https://host/path/to/site/@@hcaptcha-settings. If you don't want to "
         u"rely on an external service for captcha, you might want to consider "
         u"using plone.formwidget.captcha instead."
