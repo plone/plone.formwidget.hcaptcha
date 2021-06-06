@@ -63,7 +63,7 @@ class HcaptchaView(BrowserView):
 
         if not self.settings.private_key:
             raise ValueError(
-                "No hcaptcha private key configured. Go to "
+                "No hcaptcha private key / secret key configured. Go to "
                 "path/to/site/@@hcaptcha-settings to configure."
             )
         response_field = self.request.get("h-captcha-response")
