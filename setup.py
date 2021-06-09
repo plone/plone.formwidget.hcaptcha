@@ -14,7 +14,7 @@ setup(
     description="Hcaptcha widget for Plone.",
     long_description=description,
     classifiers=[
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 5 - Production/Stable",
         "Environment :: Web Environment",
         "Framework :: Plone",
         "Framework :: Plone :: Addon",
