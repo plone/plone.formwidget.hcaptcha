@@ -20,5 +20,6 @@
 /local/
 /parts/
 /var/
+.vscode/
 lib64
 
