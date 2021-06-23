@@ -24,8 +24,8 @@ Add the following code to your buildout.cfg to install plone.formwidget.hcaptcha
         ...
 
 
-ReCaptcha setup
----------------
+HCaptcha setup
+--------------
 
 There is a control panel at ``http://path/to/site/@@hcaptcha-settings`` to configure the Addon.
 HCaptcha provides test keys, that can be used to try out the hcaptcha form and
