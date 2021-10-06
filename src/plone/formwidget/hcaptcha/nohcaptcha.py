@@ -100,7 +100,7 @@ def submit(hcaptcha_response_field, secret_key, remoteip, verify_server=VERIFY_S
         data=params,
         headers={
             "Content-type": "application/x-www-form-urlencoded",
-            "User-agent": "noHCAPTCHA Python",
+            "User-agent": "HCAPTCHA Python",
         },
     )
 
