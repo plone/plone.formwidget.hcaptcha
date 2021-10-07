@@ -1,0 +1,3 @@
+Verify against hcaptcha API with correct URL and api path, code was still checking against recaptcha siteverify api. [fredvd]
+
+Remove IP from sent api call as it can be considered GDPR violation. [fredvd]
