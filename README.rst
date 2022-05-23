@@ -43,13 +43,22 @@ Usage
 See the `demo <https://github.com/plone/plone.formwidget.hcaptcha/tree/master/src/plone/formwidget/hcaptcha/demo>`_ folder inside the distribution for an example usage.
 
 Supermodel
-^^^^^^^^^^
+----------
 You can add a captcha field in an XML model by adding something like this::
 
     <field name="captcha" type="plone.formwidget.hcaptcha.HCaptchaWidget">
       <title>Solve Captcha</title>
       <description></description>
     </field>
+
+Translations
+------------
+
+The only day to day visible message will be the error message when a hcaptcha validation fails. The message string is located in validator.py and has been put in the 'plone' domain.
+Translations will be added to plone.app.locales. 
+
+If you want to add/override your own translation for this, for buildout you can use the locales attribute of plone.recipe.zope2instance to register a locales directory in your project where you can add a plone.po file. Alternatively you can add the same plone.po file
+in a policy package, but you have to make sure the zcml of that package is called first.
 
 
 

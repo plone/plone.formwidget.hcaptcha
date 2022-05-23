@@ -4,13 +4,10 @@ from z3c.form import validator
 from zope.component import getMultiAdapter
 from zope.i18nmessageid import MessageFactory
 from zope.schema import ValidationError
-
-
-_ = MessageFactory("plone.formwidget.hcaptcha")
-
+from Products.CMFPlone import PloneMessageFactory as _
 
 class WrongCaptchaCode(ValidationError):
-    __doc__ = _(u"The code you entered was wrong, please enter the new one.")
+    __doc__ = _(u"The verification you entered was wrong, please try a new one.")
 
 
 class HCaptchaValidator(validator.SimpleFieldValidator):

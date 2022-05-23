@@ -1,0 +1,1 @@
+Move validator error message to plone translation domain so it can be added to plone.app.locales. [fredvd]
