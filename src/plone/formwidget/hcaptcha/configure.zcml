@@ -1,6 +1,7 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
     xmlns:gs="http://namespaces.zope.org/genericsetup"
     xmlns:z3c="http://namespaces.zope.org/z3c"
     >
@@ -10,6 +11,7 @@
   <include package="plone.supermodel" />
 
   <include package=".demo" />
+  <include package=".restapi" zcml:condition="installed plone.restapi"/>
   <include file="meta.zcml" />
 
 
