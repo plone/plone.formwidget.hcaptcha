@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-06-11 17:37+0000\n"
+"POT-Creation-Date: 2022-06-15 13:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,40 +37,40 @@ msgstr ""
 msgid "In order to use HCaptcha on your Plone site, go to https://www.hcaptcha.com/ to create an account and to receive your private/secret and public/site key. Then configure them at https://host/path/to/site/@@hcaptcha-settings. If you don't want to rely on an external service for captcha, you might want to consider using plone.formwidget.captcha instead."
 msgstr ""
 
-#: ../interfaces.py:55
+#: ../interfaces.py:57
 msgid "Private Key / Secret Key"
 msgstr ""
 
-#: ../interfaces.py:51
+#: ../interfaces.py:50
 msgid "Public Key / Site Key"
 msgstr ""
 
-#: ../interfaces.py:75
+#: ../interfaces.py:80
 msgid "Size"
 msgstr ""
 
-#: ../validator.py:10
-msgid "The code you entered was wrong, please enter the new one."
-msgstr ""
-
-#: ../interfaces.py:60
+#: ../interfaces.py:65
 msgid "The color theme of the widget."
 msgstr ""
 
-#: ../interfaces.py:76
+#: ../interfaces.py:81
 msgid "The size of the widget."
 msgstr ""
 
-#: ../interfaces.py:68
+#: ../interfaces.py:73
 msgid "The type of CAPTCHA to serve."
 msgstr ""
 
-#: ../interfaces.py:59
+#: ../interfaces.py:64
 msgid "Theme"
 msgstr ""
 
-#: ../interfaces.py:67
+#: ../interfaces.py:72
 msgid "Type"
+msgstr ""
+
+#: ../validator.py:10
+msgid "We are not yet sure whether you are human. Please try again."
 msgstr ""
 
 #: ../interfaces.py:17

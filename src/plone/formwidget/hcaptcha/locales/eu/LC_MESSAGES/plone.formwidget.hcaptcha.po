@@ -2,7 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"PO-Revision-Date: 2022-06-11 19:44+0200\n"
+"PO-Revision-Date: 2022-06-15 15:53+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,8 +13,6 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "Language: eu\n"
 "X-Generator: Poedit 2.3\n"
 
@@ -32,41 +32,41 @@ msgstr "HCaptcharen ezarpenak"
 msgid "In order to use HCaptcha on your Plone site, go to https://www.hcaptcha.com/ to create an account and to receive your private/secret and public/site key. Then configure them at https://host/path/to/site/@@hcaptcha-settings. If you don't want to rely on an external service for captcha, you might want to consider using plone.formwidget.captcha instead."
 msgstr "HCaptcha zure atarian erabiltzeko joan https://www.hcaptcha.com webgunera, sortu kontu bat eta lortu gako pribatu eta publikoa. Ondoren joan @@hcaptcha-settings helbidera eta idatzi bertan. Captcharako kanpo zerbitzurik erabili nahi ez baduzu, begiratu plone.formwidget.captcha edo collective.z3cform.norobots."
 
-#: ../interfaces.py:55
+#: ../interfaces.py:57
 msgid "Private Key / Secret Key"
 msgstr "Gako pribatua/sekretua"
 
-#: ../interfaces.py:51
+#: ../interfaces.py:50
 msgid "Public Key / Site Key"
 msgstr "Gako publikoa/atarikoa"
 
-#: ../interfaces.py:75
+#: ../interfaces.py:80
 msgid "Size"
 msgstr "Tamaina"
 
-#: ../validator.py:10
-msgid "The code you entered was wrong, please enter the new one."
-msgstr "Sartutako kodea ez da zuzena, saiatu berriz."
-
-#: ../interfaces.py:60
+#: ../interfaces.py:65
 msgid "The color theme of the widget."
 msgstr "Widgetaren kolorearen gaia."
 
-#: ../interfaces.py:76
+#: ../interfaces.py:81
 msgid "The size of the widget."
 msgstr "Widgetaren tamaina."
 
-#: ../interfaces.py:68
+#: ../interfaces.py:73
 msgid "The type of CAPTCHA to serve."
 msgstr "Erabili beharreko Captcha mota."
 
-#: ../interfaces.py:59
+#: ../interfaces.py:64
 msgid "Theme"
 msgstr "Gaia"
 
-#: ../interfaces.py:67
+#: ../interfaces.py:72
 msgid "Type"
 msgstr "Mota"
+
+#: ../validator.py:10
+msgid "We are not yet sure whether you are human. Please try again."
+msgstr "Robota ote zaren zalantzan gaude. Saiatu berriz mesedez."
 
 #: ../interfaces.py:17
 msgid "audio"
