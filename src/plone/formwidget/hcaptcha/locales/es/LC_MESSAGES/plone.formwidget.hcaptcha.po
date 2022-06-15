@@ -1,0 +1,93 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"PO-Revision-Date: 2022-06-15 15:52+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+"Language: es\n"
+"X-Generator: Poedit 2.3\n"
+
+#: ../profiles/default/controlpanel.xml
+msgid "HCaptcha"
+msgstr "HCaptcha"
+
+#: ../restapi/controlpanel.py:16
+msgid "HCaptcha Control Panel"
+msgstr "Panel de Control HCaptcha"
+
+#: ../controlpanel.py:10
+msgid "HCaptcha settings"
+msgstr "Configuración HCaptcha"
+
+#: ../controlpanel.py:11
+msgid "In order to use HCaptcha on your Plone site, go to https://www.hcaptcha.com/ to create an account and to receive your private/secret and public/site key. Then configure them at https://host/path/to/site/@@hcaptcha-settings. If you don't want to rely on an external service for captcha, you might want to consider using plone.formwidget.captcha instead."
+msgstr "Para utilizar HCaptcha en su sitio Plone vaya a https://www.hcaptcha.com/ para crear una cuenta y crear una clave privada/secreta y una pública. Después configúrela en @@hcaptcha-settings. Si no quiere utilizar un servicio externo para captcha, considere utilizar plone.formwidget.captcha o collective.z3cform.norobots."
+
+#: ../interfaces.py:57
+msgid "Private Key / Secret Key"
+msgstr "Clave privada/secreta"
+
+#: ../interfaces.py:50
+msgid "Public Key / Site Key"
+msgstr "Clave pública / Clave de sitio"
+
+#: ../interfaces.py:80
+msgid "Size"
+msgstr "Tamaño"
+
+#: ../interfaces.py:65
+msgid "The color theme of the widget."
+msgstr "Tema de color del widget."
+
+#: ../interfaces.py:81
+msgid "The size of the widget."
+msgstr "Tamaño del widget"
+
+#: ../interfaces.py:73
+msgid "The type of CAPTCHA to serve."
+msgstr "Tipo de Captcha"
+
+#: ../interfaces.py:64
+msgid "Theme"
+msgstr "Tema"
+
+#: ../interfaces.py:72
+msgid "Type"
+msgstr "Tipo"
+
+#: ../validator.py:10
+msgid "We are not yet sure whether you are human. Please try again."
+msgstr "No estamos seguros que no seas un robot. Inténtalo otra vez por favor."
+
+#: ../interfaces.py:17
+msgid "audio"
+msgstr "Audio"
+
+#: ../interfaces.py:23
+msgid "compact"
+msgstr "Compacto"
+
+#: ../interfaces.py:11
+msgid "dark"
+msgstr "Oscuro"
+
+#: ../interfaces.py:16
+msgid "image"
+msgstr "Imagen"
+
+#: ../interfaces.py:10
+msgid "light"
+msgstr "Claro"
+
+#: ../interfaces.py:22
+msgid "normal"
+msgstr "Normal"

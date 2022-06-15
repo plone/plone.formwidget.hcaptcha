@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
-from plone.restapi.controlpanels import RegistryConfigletPanel
-from zope.interface import Interface
-from zope.component import adapter
+from plone.formwidget.hcaptcha.i18n import _
 from plone.formwidget.hcaptcha.interfaces import IHCaptchaSettings
-from zope.i18nmessageid import MessageFactory
-
-_ = MessageFactory("plone.formwidget.hcaptcha")
+from plone.restapi.controlpanels import RegistryConfigletPanel
+from zope.component import adapter
+from zope.interface import Interface
 
 
 @adapter(Interface, Interface)

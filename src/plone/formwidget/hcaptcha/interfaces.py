@@ -1,13 +1,9 @@
 # -*- coding: utf-8 -*-
+from plone.formwidget.hcaptcha.i18n import _
 from z3c.form import interfaces
 from zope import schema
-from zope.i18nmessageid import MessageFactory
 from zope.interface import Interface
-from zope.schema.vocabulary import SimpleTerm
-from zope.schema.vocabulary import SimpleVocabulary
-
-
-_ = MessageFactory("plone.formwidget.hcaptcha")
+from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
 
 display_themes = SimpleVocabulary(
     [
@@ -34,8 +30,7 @@ class IHCaptchaLayer(Interface):
 
 
 class IHCaptchaWidget(interfaces.IWidget):
-    """Marker interface for the HCaptcha widget
-    """
+    """Marker interface for the HCaptcha widget"""
 
 
 class IHCaptchaSettings(Interface):
@@ -52,11 +47,17 @@ class IHCaptchaSettings(Interface):
     # - Search control panel: Show comments in search results
 
     public_key = schema.TextLine(
-        title=_(u"Public Key / Site Key"), description=_(u""), required=True, default=u""
+        title=_(u"Public Key / Site Key"),
+        description=_(u""),
+        required=True,
+        default=u"",
     )
 
     private_key = schema.TextLine(
-        title=_(u"Private Key / Secret Key"), description=_(u""), required=True, default=u""
+        title=_(u"Private Key / Secret Key"),
+        description=_(u""),
+        required=True,
+        default=u"",
     )
 
     display_theme = schema.Choice(
