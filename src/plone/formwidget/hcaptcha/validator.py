@@ -7,7 +7,9 @@ from zope.schema import ValidationError
 
 
 class WrongCaptchaCode(ValidationError):
-    __doc__ = _(u"The code you entered was wrong, please enter the new one.")
+    __doc__ = _(
+        u"We are not yet sure whether you are human. Please try again."
+    )
 
 
 class HCaptchaValidator(validator.SimpleFieldValidator):
