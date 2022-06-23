@@ -1,25 +1,20 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-06-23 19:55+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"PO-Revision-Date: 2022-06-15 15:53+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
-"Language-Code: en\n"
-"Language-Name: English\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: nl\n"
+"Language-Name: Dutch\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: plone.formwidget.hcaptcha\n"
-
-#: ../interfaces.py:51
-msgid ""
-msgstr ""
+"Domain: DOMAIN\n"
+"Language: eu\n"
+"X-Generator: Poedit 2.3\n"
 
 #: ../profiles/default/controlpanel.xml
 msgid "HCaptcha"
@@ -71,7 +66,7 @@ msgstr ""
 
 #: ../validator.py:10
 msgid "We are not yet sure whether you are human. Please try again."
-msgstr ""
+msgstr "We weten nog niet zeker of u een mens bent. Probeer het alstublieft opnieuw."
 
 #: ../interfaces.py:17
 msgid "audio"
