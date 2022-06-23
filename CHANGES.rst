@@ -7,6 +7,25 @@ Changelog
 
 .. towncrier release notes start
 
+1.0.2 (2022-06-23)
+------------------
+
+New features:
+
+
+- Add an adapter to show the controlpanel in Volto
+  [erral] (#8)
+- Dutch translation for public validator error message.
+  [fredvd] (#10)
+
+
+Bug fixes:
+
+
+- Create translation files
+  [erral] (#9)
+
+
 1.0.1 (2022-02-20)
 ------------------
 
