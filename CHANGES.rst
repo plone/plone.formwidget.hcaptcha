@@ -7,10 +7,14 @@ Changelog
 
 .. towncrier release notes start
 
-1.0.4 (unreleased)
+1.0.3 (2024-03-28)
 ------------------
 
-- Nothing changed yet.
+Bug fixes:
+
+
+- German translation for public validator error message.
+  [ksuess]  (#12)
 
 
 1.0.2 (2022-06-23)
