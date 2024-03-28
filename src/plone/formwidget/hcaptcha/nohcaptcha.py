@@ -65,11 +65,7 @@ def displayhtml(
     }
 
 
-def submit(
-        hcaptcha_response_field,
-        secret_key,
-        verify_server=VERIFY_SERVER
-        ):
+def submit(hcaptcha_response_field, secret_key, verify_server=VERIFY_SERVER):
     """
     Submits a HCAPTCHA request for verification. Returns HcaptchaResponse
     for the request
