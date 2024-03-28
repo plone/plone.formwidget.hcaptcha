@@ -65,14 +65,17 @@ def displayhtml(
     }
 
 
-def submit(hcaptcha_response_field, secret_key, remoteip, verify_server=VERIFY_SERVER):
+def submit(
+        hcaptcha_response_field,
+        secret_key,
+        verify_server=VERIFY_SERVER
+        ):
     """
     Submits a HCAPTCHA request for verification. Returns HcaptchaResponse
     for the request
 
     hcaptcha_response_field -- The value from the form
     secret_key -- your HCAPTCHA secret key
-    remoteip -- the user's ip address
     """
 
     if not (hcaptcha_response_field and len(hcaptcha_response_field)):
@@ -85,7 +88,6 @@ def submit(hcaptcha_response_field, secret_key, remoteip, verify_server=VERIFY_S
 
     if six.PY2:
         secret_key = encode_if_necessary(secret_key)
-        remoteip = encode_if_necessary(remoteip)
         hcaptcha_response_field = encode_if_necessary(hcaptcha_response_field)
 
     params = parse.urlencode(
