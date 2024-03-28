@@ -67,10 +67,8 @@ class HcaptchaView(BrowserView):
                 "path/to/site/@@hcaptcha-settings to configure."
             )
         response_field = self.request.get("h-captcha-response")
-        remote_addr = self.request.get("HTTP_X_FORWARDED_FOR", "").split(",")[0]
-        if not remote_addr:
-            remote_addr = self.request.get("REMOTE_ADDR")
-        res = submit(response_field, self.settings.private_key, remote_addr)
+
+        res = submit(response_field, self.settings.private_key)
         if res.error_code:
             info.error = res.error_code
 
