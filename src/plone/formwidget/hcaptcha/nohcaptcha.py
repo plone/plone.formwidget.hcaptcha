@@ -5,6 +5,7 @@
 from six.moves.urllib import parse
 from six.moves.urllib.request import Request
 from six.moves.urllib.request import urlopen
+import os
 
 import six
 
@@ -14,9 +15,7 @@ try:
 except ImportError:
     import simplejson as json
 
-
-VERIFY_SERVER = "hcaptcha.com"
-
+VERIFY_SERVER = os.getenv("HCAPTCHA_VERIFY_SERVER", "api.hcaptcha.com")
 
 class HcaptchaResponse(object):
     def __init__(self, is_valid, error_code=None):
