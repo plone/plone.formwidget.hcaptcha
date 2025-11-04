@@ -17,6 +17,7 @@ except ImportError:
 
 VERIFY_SERVER = os.getenv("HCAPTCHA_VERIFY_SERVER", "api.hcaptcha.com")
 
+
 class HcaptchaResponse(object):
     def __init__(self, is_valid, error_code=None):
         self.is_valid = is_valid

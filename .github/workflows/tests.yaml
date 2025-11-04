@@ -11,25 +11,25 @@ jobs:
         - "3.8"
         plone-version:
         - "5.2"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Install on Linux
       run: |
         sudo apt-get install libxml2-dev libxslt1-dev libjpeg-dev
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
     - name: "Install Python dependencies (pip)"
-      uses: "py-actions/py-dependency-install@v2"
+      uses: "py-actions/py-dependency-install@v4"
       with:
         path: "requirements.txt"
         update-setuptools: "false"
         update-pip: "true"
         update-wheel: "true"
     - name: Cache eggs
-      uses: actions/cache@v2
+      uses: actions/cache@v4
       with:
         path: |
           eggs

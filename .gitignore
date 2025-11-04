@@ -8,6 +8,7 @@
 *.tmp*
 .*.cfg
 .idea
+pyvenv.cfg
 /bin/
 /build/
 /develop-eggs/
