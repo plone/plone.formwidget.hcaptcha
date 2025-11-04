@@ -38,6 +38,21 @@ documentation at https://docs.hcaptcha.com/.
 To actually use the service, you must obtain a site key and secret key from
 `https://www.hcaptcha.com/signup-interstitial <https://www.hcaptcha.com/signup-interstitial/>`_
 
+Verification endpoint
+---------------------
+According to the official hCaptcha documentation (https://docs.hcaptcha.com/#server),
+the token verification endpoint is:
+
+``https://api.hcaptcha.com/siteverify``
+
+This package now uses ``api.hcaptcha.com`` by default instead of ``hcaptcha.com``.
+If you need to change the host (e.g. staging or internal testing), set the environment
+variable before starting your Plone instance:
+
+``HCAPTCHA_VERIFY_SERVER=api.hcaptcha.com``
+
+If the variable is not defined, the safe default (``api.hcaptcha.com``) will be used.
+
 Usage
 -----
 See the `demo <https://github.com/plone/plone.formwidget.hcaptcha/tree/master/src/plone/formwidget/hcaptcha/demo>`_ folder inside the distribution for an example usage.
