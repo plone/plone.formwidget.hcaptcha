@@ -18,8 +18,3 @@ showcontent = true
 directory = "bugfix"
 name = "Bug fixes:"
 showcontent = true
-
-[tool.zest-releaser]
-
-[[tool.zest-releaser.prereleaser.middle]]
-create = "towncrier build --yes --version {version}"
