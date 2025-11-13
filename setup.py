@@ -35,6 +35,7 @@ setup(
     namespace_packages=["plone", "plone.formwidget"],
     include_package_data=True,
     zip_safe=False,
+    python_requires=">=3.7",
     install_requires=[
         "plone.app.registry",
         "plone.registry",
@@ -49,7 +50,7 @@ setup(
         "zope.schema",
         "Zope2",
     ],
-    extras_require={"test": ["plone.api", "plone.app.testing",],},
+    extras_require={"test": ["plone.api", "plone.app.testing",], },
     entry_points="""
     [z3c.autoinclude.plugin]
     target = plone
