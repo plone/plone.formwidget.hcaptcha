@@ -6,14 +6,14 @@
   <browser:page
       name="hcaptcha_form"
       for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
-      permission="zope.Public"
       class=".form.HCaptchaForm"
+      permission="zope.Public"
       />
 
   <adapter
+      factory=".form.HCaptcha"
       provides=".form.IHCaptchaForm"
       for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
-      factory=".form.HCaptcha"
       />
 
 </configure>

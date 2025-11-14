@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from Acquisition import aq_inner
 from plone.formwidget.hcaptcha.widget import HCaptchaFieldWidget
 from plone.z3cform.layout import wrap_form
@@ -16,26 +15,26 @@ logger = logging.getLogger(__name__)
 
 
 class IHCaptchaForm(interface.Interface):
-    subject = schema.TextLine(title=u"Subject", description=u"", required=True)
+    subject = schema.TextLine(title="Subject", description="", required=True)
 
-    captcha = schema.TextLine(title=u"HCaptcha", description=u"", required=False)
+    captcha = schema.TextLine(title="HCaptcha", description="", required=False)
 
 
-class HCaptcha(object):
-    subject = u""
-    captcha = u""
+class HCaptcha:
+    subject = ""
+    captcha = ""
 
     def __init__(self, context):
         self.context = context
 
 
 class BaseForm(form.Form):
-    """ example captcha form """
+    """example captcha form"""
 
     fields = field.Fields(IHCaptchaForm)
     fields["captcha"].widgetFactory = HCaptchaFieldWidget
 
-    @button.buttonAndHandler(u"Save")
+    @button.buttonAndHandler("Save")
     def handleApply(self, action):
         data, errors = self.extractData()
         captcha = getMultiAdapter(

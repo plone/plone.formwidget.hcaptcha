@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from plone.formwidget.hcaptcha.interfaces import IHCaptchaSettings
 from plone.formwidget.hcaptcha.nohcaptcha import displayhtml
 from plone.formwidget.hcaptcha.nohcaptcha import submit
@@ -21,7 +20,7 @@ class IHcaptchaInfo(Interface):
 
 @adapter(IBrowserRequest)
 @implementer(IHcaptchaInfo)
-class HcaptchaInfoAnnotation(object):
+class HcaptchaInfoAnnotation:
     def __init__(self):
         self.error = None
         self.verified = False
@@ -39,11 +38,9 @@ class HcaptchaView(BrowserView):
 
     def image_tag(self):
         if not self.settings.public_key:
-            return """No hcaptcha public key / site key configured.
-                Go to <a href="{}/@@hcaptcha-settings" target=_blank>
-                Hcaptcha Settings</a> to configure.""".format(
-                getSite().absolute_url()
-            )  # noqa: E501
+            return f"""No hcaptcha public key / site key configured.
+                Go to <a href="{getSite().absolute_url()}/@@hcaptcha-settings" target=_blank>
+                Hcaptcha Settings</a> to configure."""  # noqa: E501
         lang = self.request.get("LANGUAGE", "en")
         return displayhtml(
             self.settings.public_key,
