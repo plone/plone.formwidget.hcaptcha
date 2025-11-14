@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from Acquisition import aq_inner
 from plone.formwidget.hcaptcha.validator import WrongCaptchaCode
 from plone.supermodel.exportimport import ObjectHandler

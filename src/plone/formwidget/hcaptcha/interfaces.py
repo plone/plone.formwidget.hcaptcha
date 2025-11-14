@@ -1,28 +1,23 @@
-# -*- coding: utf-8 -*-
 from plone.formwidget.hcaptcha.i18n import _
 from z3c.form import interfaces
 from zope import schema
 from zope.interface import Interface
-from zope.schema.vocabulary import SimpleTerm, SimpleVocabulary
+from zope.schema.vocabulary import SimpleTerm
+from zope.schema.vocabulary import SimpleVocabulary
 
-display_themes = SimpleVocabulary(
-    [
-        SimpleTerm(value=u"light", title=_(u"light")),
-        SimpleTerm(value=u"dark", title=_(u"dark")),
-    ]
-)
-display_types = SimpleVocabulary(
-    [
-        SimpleTerm(value=u"image", title=_(u"image")),
-        SimpleTerm(value=u"audio", title=_(u"audio")),
-    ]
-)
-display_sizes = SimpleVocabulary(
-    [
-        SimpleTerm(value=u"normal", title=_(u"normal")),
-        SimpleTerm(value=u"compact", title=_(u"compact")),
-    ]
-)
+
+display_themes = SimpleVocabulary([
+    SimpleTerm(value="light", title=_("light")),
+    SimpleTerm(value="dark", title=_("dark")),
+])
+display_types = SimpleVocabulary([
+    SimpleTerm(value="image", title=_("image")),
+    SimpleTerm(value="audio", title=_("audio")),
+])
+display_sizes = SimpleVocabulary([
+    SimpleTerm(value="normal", title=_("normal")),
+    SimpleTerm(value="compact", title=_("compact")),
+])
 
 
 class IHCaptchaLayer(Interface):
@@ -47,39 +42,39 @@ class IHCaptchaSettings(Interface):
     # - Search control panel: Show comments in search results
 
     public_key = schema.TextLine(
-        title=_(u"Public Key / Site Key"),
-        description=_(u""),
+        title=_("Public Key / Site Key"),
+        description=_(""),
         required=True,
-        default=u"",
+        default="",
     )
 
     private_key = schema.TextLine(
-        title=_(u"Private Key / Secret Key"),
-        description=_(u""),
+        title=_("Private Key / Secret Key"),
+        description=_(""),
         required=True,
-        default=u"",
+        default="",
     )
 
     display_theme = schema.Choice(
-        title=_(u"Theme"),
-        description=_(u"The color theme of the widget."),
+        title=_("Theme"),
+        description=_("The color theme of the widget."),
         required=True,
-        default=u"light",
+        default="light",
         vocabulary=display_themes,
     )
 
     display_type = schema.Choice(
-        title=_(u"Type"),
-        description=_(u"The type of CAPTCHA to serve."),
+        title=_("Type"),
+        description=_("The type of CAPTCHA to serve."),
         required=True,
-        default=u"image",
+        default="image",
         vocabulary=display_types,
     )
 
     display_size = schema.Choice(
-        title=_(u"Size"),
-        description=_(u"The size of the widget."),
+        title=_("Size"),
+        description=_("The size of the widget."),
         required=True,
-        default=u"normal",
+        default="normal",
         vocabulary=display_sizes,
     )

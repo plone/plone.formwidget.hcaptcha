@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from Acquisition import aq_inner
 from plone.formwidget.hcaptcha.i18n import _
 from z3c.form import validator
@@ -7,9 +6,7 @@ from zope.schema import ValidationError
 
 
 class WrongCaptchaCode(ValidationError):
-    __doc__ = _(
-        u"We are not yet sure whether you are human. Please try again."
-    )
+    __doc__ = _("We are not yet sure whether you are human. Please try again.")
 
 
 class HCaptchaValidator(validator.SimpleFieldValidator):

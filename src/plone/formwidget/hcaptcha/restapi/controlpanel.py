@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from plone.formwidget.hcaptcha.i18n import _
 from plone.formwidget.hcaptcha.interfaces import IHCaptchaSettings
 from plone.restapi.controlpanels import RegistryConfigletPanel

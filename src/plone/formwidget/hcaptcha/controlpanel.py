@@ -1,20 +1,18 @@
-# -*- coding: utf-8 -*-
 from plone.app.registry.browser import controlpanel
 from plone.formwidget.hcaptcha.i18n import _
 from plone.formwidget.hcaptcha.interfaces import IHCaptchaSettings
 
 
 class HCaptchaSettingsEditForm(controlpanel.RegistryEditForm):
-
     schema = IHCaptchaSettings
-    label = _(u"HCaptcha settings")
+    label = _("HCaptcha settings")
     description = _(
-        u"In order to use HCaptcha on your Plone site, go to"
-        u" https://www.hcaptcha.com/ to create an account and to receive your"
-        u" private/secret and public/site key. Then configure them at"
-        u" https://host/path/to/site/@@hcaptcha-settings. If you don't want to"
-        u" rely on an external service for captcha, you might want to consider"
-        u" using plone.formwidget.captcha instead."
+        "In order to use HCaptcha on your Plone site, go to"
+        " https://www.hcaptcha.com/ to create an account and to receive your"
+        " private/secret and public/site key. Then configure them at"
+        " https://host/path/to/site/@@hcaptcha-settings. If you don't want to"
+        " rely on an external service for captcha, you might want to consider"
+        " using plone.formwidget.captcha instead."
     )
 
     def updateFields(self):
