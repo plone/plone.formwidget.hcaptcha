@@ -1,1 +1,0 @@
-Fix hCaptcha verification to use the documented endpoint (api.hcaptcha.com/siteverify) and allow overriding the host via the HCAPTCHA_VERIFY_SERVER environment variable. @alexandreIFB

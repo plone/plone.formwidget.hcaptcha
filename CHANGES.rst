@@ -7,6 +7,16 @@ Changelog
 
 .. towncrier release notes start
 
+1.0.4 (2025-11-14)
+------------------
+
+Bug fixes:
+
+
+- Fix hCaptcha verification to use the documented endpoint (api.hcaptcha.com/siteverify) and allow overriding the host via the HCAPTCHA_VERIFY_SERVER environment variable. @alexandreIFB (#13)
+- Fix CI. @wesleybl (#15)
+
+
 1.0.3 (2024-03-28)
 ------------------
 
