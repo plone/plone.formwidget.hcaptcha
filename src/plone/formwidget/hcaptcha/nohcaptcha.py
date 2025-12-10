@@ -1,12 +1,11 @@
-# -*- coding: utf-8 -*-
 # Code taken from external dependency
 # https://pypi.org/project/nohcaptcha/, which is not
 # updated to Python 3
 from six.moves.urllib import parse
 from six.moves.urllib.request import Request
 from six.moves.urllib.request import urlopen
-import os
 
+import os
 import six
 
 
@@ -18,13 +17,13 @@ except ImportError:
 VERIFY_SERVER = os.getenv("HCAPTCHA_VERIFY_SERVER", "api.hcaptcha.com")
 
 
-class HcaptchaResponse(object):
+class HcaptchaResponse:
     def __init__(self, is_valid, error_code=None):
         self.is_valid = is_valid
         self.error_code = error_code
 
     def __repr__(self):
-        return "Hcaptcha response: {0} {1}".format(self.is_valid, self.error_code)
+        return f"Hcaptcha response: {self.is_valid} {self.error_code}"
 
     def __str__(self):
         return self.__repr__()
@@ -86,15 +85,13 @@ def submit(hcaptcha_response_field, secret_key, verify_server=VERIFY_SERVER):
         secret_key = encode_if_necessary(secret_key)
         hcaptcha_response_field = encode_if_necessary(hcaptcha_response_field)
 
-    params = parse.urlencode(
-        {
-            "secret": secret_key,
-            "response": hcaptcha_response_field,
-        }
-    )
+    params = parse.urlencode({
+        "secret": secret_key,
+        "response": hcaptcha_response_field,
+    })
 
     request = Request(
-        url="https://{0}/siteverify".format(verify_server),
+        url=f"https://{verify_server}/siteverify",
         data=params,
         headers={
             "Content-type": "application/x-www-form-urlencoded",

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <layers>
   <layer interface="plone.formwidget.hcaptcha.interfaces.IHCaptchaLayer"
          name="plone.formwidget.hcaptcha"

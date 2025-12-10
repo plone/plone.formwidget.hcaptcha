@@ -1,11 +1,13 @@
-Changelog
-=========
+# Changelog
 
-.. You should *NOT* be adding new change log entries to this file, this
-   file is managed by towncrier. You *may* edit previous change logs to
-   fix problems like typo corrections or such.
+<!--
+   You should *NOT* be adding new change log entries to this file.
+   You should create a file in the news directory instead.
+   For helpful instructions, please see:
+   https://github.com/plone/plone.releaser/blob/master/ADD-A-NEWS-ITEM.rst
+-->
 
-.. towncrier release notes start
+<!-- towncrier release notes start -->
 
 1.0.4 (2025-11-14)
 ------------------
