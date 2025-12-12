@@ -16,78 +16,78 @@ msgstr ""
 "Language: eu\n"
 "X-Generator: Poedit 2.3\n"
 
-#: ../profiles/default/controlpanel.xml
+#: plone/formwidget/hcaptcha/profiles/default/controlpanel.xml
 msgid "HCaptcha"
 msgstr ""
 
-#: ../restapi/controlpanel.py:16
+#: plone/formwidget/hcaptcha/restapi/controlpanel.py:15
 msgid "HCaptcha Control Panel"
 msgstr ""
 
-#: ../controlpanel.py:10
+#: plone/formwidget/hcaptcha/controlpanel.py:8
 msgid "HCaptcha settings"
 msgstr ""
 
-#: ../controlpanel.py:11
+#: plone/formwidget/hcaptcha/controlpanel.py:9
 msgid "In order to use HCaptcha on your Plone site, go to https://www.hcaptcha.com/ to create an account and to receive your private/secret and public/site key. Then configure them at https://host/path/to/site/@@hcaptcha-settings. If you don't want to rely on an external service for captcha, you might want to consider using plone.formwidget.captcha instead."
 msgstr ""
 
-#: ../interfaces.py:57
+#: plone/formwidget/hcaptcha/interfaces.py:52
 msgid "Private Key / Secret Key"
 msgstr ""
 
-#: ../interfaces.py:50
+#: plone/formwidget/hcaptcha/interfaces.py:45
 msgid "Public Key / Site Key"
 msgstr ""
 
-#: ../interfaces.py:80
+#: plone/formwidget/hcaptcha/interfaces.py:75
 msgid "Size"
 msgstr ""
 
-#: ../interfaces.py:65
+#: plone/formwidget/hcaptcha/interfaces.py:60
 msgid "The color theme of the widget."
 msgstr ""
 
-#: ../interfaces.py:81
+#: plone/formwidget/hcaptcha/interfaces.py:76
 msgid "The size of the widget."
 msgstr ""
 
-#: ../interfaces.py:73
+#: plone/formwidget/hcaptcha/interfaces.py:68
 msgid "The type of CAPTCHA to serve."
 msgstr ""
 
-#: ../interfaces.py:64
+#: plone/formwidget/hcaptcha/interfaces.py:59
 msgid "Theme"
 msgstr ""
 
-#: ../interfaces.py:72
+#: plone/formwidget/hcaptcha/interfaces.py:67
 msgid "Type"
 msgstr ""
 
-#: ../validator.py:10
+#: plone/formwidget/hcaptcha/validator.py:9
 msgid "We are not yet sure whether you are human. Please try again."
 msgstr "Wir sind nicht sicher ob Sie ein Mensch sind. Bitte versuchen Sie es nochmals."
 
-#: ../interfaces.py:17
+#: plone/formwidget/hcaptcha/interfaces.py:15
 msgid "audio"
 msgstr ""
 
-#: ../interfaces.py:23
+#: plone/formwidget/hcaptcha/interfaces.py:19
 msgid "compact"
 msgstr ""
 
-#: ../interfaces.py:11
+#: plone/formwidget/hcaptcha/interfaces.py:11
 msgid "dark"
 msgstr ""
 
-#: ../interfaces.py:16
+#: plone/formwidget/hcaptcha/interfaces.py:14
 msgid "image"
 msgstr ""
 
-#: ../interfaces.py:10
+#: plone/formwidget/hcaptcha/interfaces.py:10
 msgid "light"
 msgstr ""
 
-#: ../interfaces.py:22
+#: plone/formwidget/hcaptcha/interfaces.py:18
 msgid "normal"
 msgstr ""
