@@ -9,6 +9,24 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0b1 (2025-12-19)
+
+
+### Breaking changes:
+
+- Drop support to Plone 5.2. @wesleybl [#17](https://github.com/plone/plone.formwidget.hcaptcha/issues/17)
+
+
+### New features:
+
+- Adds support to Plone 6.1 and 6.0. @wesleybl [#17](https://github.com/plone/plone.formwidget.hcaptcha/issues/17)
+- Add pt_BR translation. @wesleybl [#19](https://github.com/plone/plone.formwidget.hcaptcha/issues/19)
+
+
+### Internal:
+
+- Apply cookieplone template. @wesleybl [#17](https://github.com/plone/plone.formwidget.hcaptcha/issues/17)
+
 1.0.4 (2025-11-14)
 ------------------
 
