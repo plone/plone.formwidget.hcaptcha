@@ -8,7 +8,7 @@ from zope.i18nmessageid import MessageFactory
 import logging
 
 
-__version__ = "2.0.0b2.dev0"
+__version__ = "2.0.0"
 
 PACKAGE_NAME = "plone.formwidget.hcaptcha"
 

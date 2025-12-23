@@ -9,6 +9,13 @@
 
 <!-- towncrier release notes start -->
 
+## 2.0.0 (2025-12-23)
+
+
+### Internal:
+
+- No changes @erral 
+
 ## 2.0.0b1 (2025-12-19)
 
 
