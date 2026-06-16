@@ -28,7 +28,7 @@ BACKEND_FOLDER=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 ifdef PLONE_VERSION
 PLONE_VERSION := $(PLONE_VERSION)
 else
-PLONE_VERSION := 6.1.3
+PLONE_VERSION := 6.2.0
 endif
 
 VENV_FOLDER=$(BACKEND_FOLDER)/.venv
