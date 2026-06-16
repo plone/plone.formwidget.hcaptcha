@@ -1,8 +1,8 @@
 """Init and utils."""
 
-from plone.formwidget.hcaptcha.validator import HCaptchaValidator  # noqa
-from plone.formwidget.hcaptcha.widget import HCaptchaFieldWidget  # noqa
-from plone.formwidget.hcaptcha.widget import HCaptchaWidget  # noqa
+from plone.formwidget.hcaptcha.browser.widget import HCaptchaFieldWidget  # noqa: F401
+from plone.formwidget.hcaptcha.browser.widget import HCaptchaWidget  # noqa: F401
+from plone.formwidget.hcaptcha.validator import HCaptchaValidator  # noqa: F401
 from zope.i18nmessageid import MessageFactory
 
 import logging

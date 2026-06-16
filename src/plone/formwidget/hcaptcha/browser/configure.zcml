@@ -1,0 +1,53 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:z3c="http://namespaces.zope.org/z3c"
+    >
+
+  <!-- Widget adapter -->
+  <adapter
+      factory=".widget.HCaptchaFieldWidget"
+      for="plone.formwidget.hcaptcha.supermodel.ICaptchaField
+           z3c.form.interfaces.IFormLayer"
+      />
+
+  <z3c:widgetTemplate
+      widget="plone.formwidget.hcaptcha.interfaces.IHCaptchaWidget"
+      template="widget_display.pt"
+      layer="z3c.form.interfaces.IFormLayer"
+      mode="display"
+      />
+
+  <z3c:widgetTemplate
+      widget="plone.formwidget.hcaptcha.interfaces.IHCaptchaWidget"
+      template="widget.pt"
+      layer="z3c.form.interfaces.IFormLayer"
+      mode="input"
+      />
+
+  <class class=".widget.HCaptchaWidget">
+    <require
+        permission="zope.Public"
+        interface="plone.formwidget.hcaptcha.interfaces.IHCaptchaWidget"
+        />
+  </class>
+
+
+  <!-- View for hcaptcha info -->
+  <adapter factory=".view.HcaptchaInfo" />
+
+  <browser:view
+      name="hcaptcha"
+      for="*"
+      class=".view.HcaptchaView"
+      permission="zope2.Public"
+      layer="plone.formwidget.hcaptcha.interfaces.IHCaptchaLayer"
+      />
+
+  <!-- make security assertions for use from restricted Python -->
+  <class class="plone.formwidget.hcaptcha.browser.view.HcaptchaView">
+    <allow attributes="image_tag audio_url verify external" />
+  </class>
+
+
+</configure>

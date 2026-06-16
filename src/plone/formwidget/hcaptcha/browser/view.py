@@ -1,13 +1,11 @@
+from plone import api
 from plone.formwidget.hcaptcha.interfaces import IHCaptchaSettings
 from plone.formwidget.hcaptcha.nohcaptcha import displayhtml
 from plone.formwidget.hcaptcha.nohcaptcha import submit
-from plone.registry.interfaces import IRegistry
 from Products.Five import BrowserView
 from zope import schema
 from zope.annotation import factory
 from zope.component import adapter
-from zope.component import queryUtility
-from zope.component.hooks import getSite
 from zope.interface import implementer
 from zope.interface import Interface
 from zope.publisher.interfaces.browser import IBrowserRequest
@@ -33,14 +31,15 @@ class HcaptchaView(BrowserView):
     def __init__(self, context, request):
         self.context = context
         self.request = request
-        registry = queryUtility(IRegistry)
+        self.portal_url = api.portal.get().absolute_url()
+        registry = api.portal.get_tool("portal_registry")
         self.settings = registry.forInterface(IHCaptchaSettings)
 
     def image_tag(self):
         if not self.settings.public_key:
             return f"""No hcaptcha public key / site key configured.
-                Go to <a href="{getSite().absolute_url()}/@@hcaptcha-settings" target=_blank>
-                Hcaptcha Settings</a> to configure."""  # noqa: E501
+                Go to <a href="{self.portal_url}/@@hcaptcha-settings" target=_blank>
+                Hcaptcha Settings</a> to configure."""
         lang = self.request.get("LANGUAGE", "en")
         return displayhtml(
             self.settings.public_key,
@@ -50,10 +49,10 @@ class HcaptchaView(BrowserView):
             size=self.settings.display_size,
         )
 
-    def audio_url(self):
+    def audio_url(self) -> None:
         return None
 
-    def verify(self, input=None):
+    def verify(self, input_: None = None) -> bool:
         info = IHcaptchaInfo(self.request)
         if info.verified:
             return True
@@ -73,5 +72,5 @@ class HcaptchaView(BrowserView):
         return res.is_valid
 
     @property
-    def external(self):
+    def external(self) -> bool:
         return True
