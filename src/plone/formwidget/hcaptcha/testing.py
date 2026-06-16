@@ -11,12 +11,8 @@ class Layer(PloneSandboxLayer):
     defaultBases = (PLONE_APP_CONTENTTYPES_FIXTURE,)
 
     def setUpZope(self, app, configurationContext):
-        # Load any other ZCML that is required for your tests.
-        # The z3c.autoinclude feature is disabled in the Plone fixture base
-        # layer.
-        import plone.restapi
+        import plone.formwidget.hcaptcha
 
-        self.loadZCML(package=plone.restapi)
         self.loadZCML(package=plone.formwidget.hcaptcha)
 
     def setUpPloneSite(self, portal):

@@ -11,7 +11,7 @@ class WrongCaptchaCode(ValidationError):
 
 class HCaptchaValidator(validator.SimpleFieldValidator):
     def validate(self, value):
-        super(HCaptchaValidator, self).validate(value)
+        super().validate(value)
         captcha = getMultiAdapter(
             (aq_inner(self.context), self.request), name="hcaptcha"
         )

@@ -1,0 +1,23 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="plone.formwidget.hcaptcha"
+    >
+
+  <!-- Control panel -->
+  <browser:page
+      name="hcaptcha-settings"
+      for="zope.component.interfaces.ISite"
+      class=".controlpanel.HCaptchaSettingsControlPanel"
+      permission="cmf.ManagePortal"
+      layer="plone.formwidget.hcaptcha.interfaces.IHCaptchaLayer"
+      />
+
+  <adapter
+      factory=".controlpanel.HCaptchaConfigletPanel"
+      name="hcaptcha"
+      />
+
+  <!-- -*- extra stuff goes here -*- -->
+</configure>

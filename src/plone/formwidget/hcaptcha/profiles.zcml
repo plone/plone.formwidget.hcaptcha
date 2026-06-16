@@ -1,0 +1,33 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="plone.formwidget.hcaptcha"
+    >
+
+  <genericsetup:registerProfile
+      name="default"
+      title="HCaptcha widget"
+      description="z3c.form HCaptcha widget."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      directory="profiles/default"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="plone.formwidgets.hcaptcha (uninstall)"
+      description="Uninstalls the plone.formwidgets.hcaptcha add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/uninstall"
+      />
+
+  <!-- Hide Uninstall Profile-->
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="plone.formwidget.hcaptcha"
+      />
+
+
+  <include package=".upgrades" />
+
+</configure>

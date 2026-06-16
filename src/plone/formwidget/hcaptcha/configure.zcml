@@ -9,17 +9,12 @@
 
   <i18n:registerTranslations directory="locales" />
 
-  <include package="plone.z3cform" />
-  <include package="plone.app.registry" />
-  <include package="plone.supermodel" />
-
-  <include package=".demo" />
-  <!-- BBB Needed only while we support Plone 4.3-->
-  <include
-      package=".restapi"
-      zcml:condition="installed plone.restapi"
-      />
+  <include file="dependencies.zcml" />
   <include file="meta.zcml" />
+  <include file="profiles.zcml" />
+
+  <include package=".controlpanels" />
+  <include package=".demo" />
 
 
   <utility
@@ -32,57 +27,6 @@
       for="plone.formwidget.hcaptcha.supermodel.ICaptchaField
            z3c.form.interfaces.IFormLayer"
       />
-
-  <!-- Profile and upgrades -->
-  <gs:registerProfile
-      name="default"
-      title="HCaptcha widget"
-      description="z3c.form HCaptcha widget."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-      directory="profiles/default"
-      />
-  <gs:registerProfile
-      name="uninstall"
-      title="plone.formwidgets.hcaptcha (uninstall)"
-      description="Uninstalls the plone.formwidgets.hcaptcha add-on."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      directory="profiles/uninstall"
-      />
-  <gs:upgradeStep
-      title="Install browser layer"
-      description=""
-      profile="plone.formwidget.hcaptcha:default"
-      source="1"
-      destination="2"
-      handler=".upgrades.install_browserlayer"
-      />
-  <gs:upgradeStep
-      title="Re-Apply registry: load new controlpanel values"
-      description=""
-      profile="plone.formwidget.hcaptcha:default"
-      source="2"
-      destination="3"
-      handler=".upgrades.reapply_registry"
-      />
-  <gs:upgradeStep
-      title="Remove obsolete JavaScript"
-      description=""
-      profile="plone.formwidget.hcaptcha:default"
-      source="3"
-      destination="4"
-      handler=".upgrades.to_4"
-      />
-
-  <!-- Control panel -->
-  <browser:page
-      name="hcaptcha-settings"
-      for="zope.component.interfaces.ISite"
-      class=".controlpanel.HCaptchaSettingsControlPanel"
-      permission="cmf.ManagePortal"
-      layer=".interfaces.IHCaptchaLayer"
-      />
-
 
   <adapter factory=".view.HcaptchaInfo" />
 

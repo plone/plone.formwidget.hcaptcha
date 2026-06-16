@@ -1,0 +1,29 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+  <genericsetup:upgradeStep
+      title="Install browser layer"
+      description=""
+      profile="plone.formwidget.hcaptcha:default"
+      source="1"
+      destination="2"
+      handler=".upgrades.install_browserlayer"
+      />
+  <genericsetup:upgradeStep
+      title="Re-Apply registry: load new controlpanel values"
+      description=""
+      profile="plone.formwidget.hcaptcha:default"
+      source="2"
+      destination="3"
+      handler=".upgrades.reapply_registry"
+      />
+  <genericsetup:upgradeStep
+      title="Remove obsolete JavaScript"
+      description=""
+      profile="plone.formwidget.hcaptcha:default"
+      source="3"
+      destination="4"
+      handler=".upgrades.to_4"
+      />
+</configure>
