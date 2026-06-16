@@ -20,15 +20,19 @@ msgstr ""
 msgid "HCaptcha"
 msgstr ""
 
-#: plone/formwidget/hcaptcha/restapi/controlpanel.py:15
+#: plone/formwidget/hcaptcha/controlpanels/controlpanel.py:40
 msgid "HCaptcha Control Panel"
 msgstr ""
 
-#: plone/formwidget/hcaptcha/controlpanel.py:8
+#: plone/formwidget/hcaptcha/controlpanels/controlpanel.py:12
 msgid "HCaptcha settings"
 msgstr ""
 
-#: plone/formwidget/hcaptcha/controlpanel.py:9
+#: plone/formwidget/hcaptcha/profiles.zcml:14
+msgid "HCaptcha widget"
+msgstr ""
+
+#: plone/formwidget/hcaptcha/controlpanels/controlpanel.py:13
 msgid "In order to use HCaptcha on your Plone site, go to https://www.hcaptcha.com/ to create an account and to receive your private/secret and public/site key. Then configure them at https://host/path/to/site/@@hcaptcha-settings. If you don't want to rely on an external service for captcha, you might want to consider using plone.formwidget.captcha instead."
 msgstr ""
 
@@ -64,6 +68,10 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
+#: plone/formwidget/hcaptcha/profiles.zcml:22
+msgid "Uninstalls the plone.formwidgets.hcaptcha add-on."
+msgstr ""
+
 #: plone/formwidget/hcaptcha/validator.py:9
 msgid "We are not yet sure whether you are human. Please try again."
 msgstr "Wir sind nicht sicher ob Sie ein Mensch sind. Bitte versuchen Sie es nochmals."
@@ -90,4 +98,12 @@ msgstr ""
 
 #: plone/formwidget/hcaptcha/interfaces.py:18
 msgid "normal"
+msgstr ""
+
+#: plone/formwidget/hcaptcha/profiles.zcml:22
+msgid "plone.formwidgets.hcaptcha (uninstall)"
+msgstr ""
+
+#: plone/formwidget/hcaptcha/profiles.zcml:14
+msgid "z3c.form HCaptcha widget."
 msgstr ""
