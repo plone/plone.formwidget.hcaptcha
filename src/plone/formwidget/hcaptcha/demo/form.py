@@ -1,5 +1,5 @@
 from Acquisition import aq_inner
-from plone.formwidget.hcaptcha.widget import HCaptchaFieldWidget
+from plone.formwidget.hcaptcha.browser.widget import HCaptchaFieldWidget
 from plone.z3cform.layout import wrap_form
 from z3c.form import button
 from z3c.form import field
@@ -36,7 +36,7 @@ class BaseForm(form.Form):
 
     @button.buttonAndHandler("Save")
     def handleApply(self, action):
-        data, errors = self.extractData()
+        self.extractData()
         captcha = getMultiAdapter(
             (aq_inner(self.context), self.request), name="hcaptcha"
         )

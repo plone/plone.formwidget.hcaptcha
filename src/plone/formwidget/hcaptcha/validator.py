@@ -1,7 +1,8 @@
 from Acquisition import aq_inner
+from plone import api
+from plone.formwidget.hcaptcha.browser.view import HcaptchaView
 from plone.formwidget.hcaptcha.i18n import _
 from z3c.form import validator
-from zope.component import getMultiAdapter
 from zope.schema import ValidationError
 
 
@@ -10,10 +11,10 @@ class WrongCaptchaCode(ValidationError):
 
 
 class HCaptchaValidator(validator.SimpleFieldValidator):
-    def validate(self, value):
-        super(HCaptchaValidator, self).validate(value)
-        captcha = getMultiAdapter(
-            (aq_inner(self.context), self.request), name="hcaptcha"
+    def validate(self, value: str) -> bool:
+        super().validate(value)
+        captcha: HcaptchaView = api.content.get_view(
+            name="hcaptcha", context=aq_inner(self.context), request=self.request
         )
         if not captcha.verify():
             raise WrongCaptchaCode

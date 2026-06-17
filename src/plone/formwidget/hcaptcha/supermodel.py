@@ -13,11 +13,11 @@ class ICaptchaField(IField):
 
 @implementer(ICaptchaField)
 class CaptchaField(Field):
-    def get(self, object):
+    def get(self, obj):
         # Captcha field should never save anything in the object itself
         return None
 
-    def set(self, object, value):
+    def set(self, obj, value):
         # Captcha field should never save anything in the object itself
         return None
 
