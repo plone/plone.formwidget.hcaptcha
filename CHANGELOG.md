@@ -9,6 +9,22 @@
 
 <!-- towncrier release notes start -->
 
+## 3.0.0 (2026-06-17)
+
+
+### New features:
+
+- Registered a restapi control panel so the HCaptcha settings are configurable on a Volto site. @ericof [#22](https://github.com/plone/plone.formwidget.hcaptcha/issues/22)
+- Added support for Plone 6.2. @ericof [#24](https://github.com/plone/plone.formwidget.hcaptcha/issues/24)
+
+
+### Internal:
+
+- Converted the package to a native namespace package. @ericof [#21](https://github.com/plone/plone.formwidget.hcaptcha/issues/21)
+- Increased test coverage for the captcha module, the Hcaptcha browser view, and the supermodel captcha field. @ericof [#23](https://github.com/plone/plone.formwidget.hcaptcha/issues/23)
+- Add Changelog check for pull requests. @ericof 
+- Updated the Brazilian Portuguese (pt_BR) translation. @ericof 
+
 ## 2.0.0 (2025-12-23)
 
 
